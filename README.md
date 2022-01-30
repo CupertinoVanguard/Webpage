@@ -1,10 +1,11 @@
-## HELLO to GitHub Pages
+## Labs For ECE 4960
 
 You can use the [editor on GitHub](https://github.com/CupertinoVanguard/Webpage/edit/main/README.md) to maintain and preview the content for your website in Markdown files.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
 
-### Markdown
+### Lab 1
+
+Write Up: This lab involved setting up the artemis and experimenting with the Arduino IDE. The first example experimented with in this lab involved using `digitalWrite()` to blink the LED onboard by driving it high for half a second then driving it low for yet another half a second. The demonstration of this is included in link [1]. The second taks involved experimenting with the serial monitor. The taks involved (with code already provided) having the serial monitor output what it reads in as input. In such a fashion, it essentially _echoes_ the input. 
 
 Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
 
