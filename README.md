@@ -1,8 +1,5 @@
 ## Labs For ECE 4960
 
-You can use the [editor on GitHub](https://github.com/CupertinoVanguard/Webpage/edit/main/README.md) to maintain and preview the content for your website in Markdown files.
-
-
 ### Lab 1
 
 **Write Up:** 
@@ -16,5 +13,7 @@ This lab involved setting up the artemis and experimenting with the Arduino IDE.
   The microphone task involved utilizing the PDM library to read and process the read from the microphone onboard. The PDM vallue is read into a buffer and processed using the FFT ibarary in the printLoudest method. Additionally, for the extra task, the print Loudest method is made to return the float value calculated. Though the assignemnt says to turn the LED on when the frequency is the whistling range, the range included is in the lower frequency range due to my inability to whistle. A screenshot of the amended code is included below: 
 
 **_Links for Lab 1_**
-1. [Link](https://www.youtube.com/watch?v=De2FU9awyLI)
-2. [Link](https://www.youtube.com/watch?v=1Dfg-vEx9Ps)
+1. [1 - Blink it up](https://www.youtube.com/watch?v=De2FU9awyLI)
+2. [2 - Serial](https://www.youtube.com/watch?v=1Dfg-vEx9Ps)
+
+![image](https://user-images.githubusercontent.com/23284665/151727748-799149ef-ee5b-4603-ac07-413f890c1088.png)
