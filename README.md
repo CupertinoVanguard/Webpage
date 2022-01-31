@@ -15,31 +15,6 @@ This lab involved setting up the artemis and experimenting with the Arduino IDE.
   
   The microphone task involved utilizing the PDM library to read and process the read from the microphone onboard. The PDM vallue is read into a buffer and processed using the FFT ibarary in the printLoudest method. Additionally, for the extra task, the print Loudest method is made to return the float value calculated. Though the assignemnt says to turn the LED on when the frequency is the whistling range, the range included is in the lower frequency range due to my inability to whistle. A screenshot of the amended code is included below: 
 
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [Basic writing and formatting syntax](https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/CupertinoVanguard/Webpage/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or 
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+**_Links for Lab 1_**
+1. [Link](https://www.youtube.com/watch?v=De2FU9awyLI)
+2. [Link](https://www.youtube.com/watch?v=1Dfg-vEx9Ps)
