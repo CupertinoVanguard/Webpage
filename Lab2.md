@@ -1,8 +1,10 @@
 
 
-### Lab 1
+### Lab 2
 
 **Write Up:** 
+
+This lab involved experimenting with and better understanding the BLE module onboard the Artemis Nano. The first component of this whole lab involved interfacing with the artemis nano via bluetooth. To achieve the MAC address of the Nano was attained by running the provided ble_arduino.ino program. Utilizing the MAC address and cross_checking the UUID
 
 This lab involved setting up the artemis and experimenting with the Arduino IDE. The first example experimented with in this lab involved using `digitalWrite()` to blink the LED onboard by driving it high for half a second then driving it low for yet another half a second. The demonstration of this is included in link [1]. 
 
