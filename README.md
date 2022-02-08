@@ -1,6 +1,6 @@
 ## Labs For ECE 4960
 
-### Lab 1
+### Lab 1n 
 
 [lab2](https://cupertinovanguard.github.io/Webpage/Lab2)
 **Write Up:** 
