@@ -2,6 +2,7 @@
 
 ### Lab 1
 
+[lab2](https://cupertinovanguard.github.io/Webpage/Lab2)
 **Write Up:** 
 
 This lab involved setting up the artemis and experimenting with the Arduino IDE. The first example experimented with in this lab involved using `digitalWrite()` to blink the LED onboard by driving it high for half a second then driving it low for yet another half a second. The demonstration of this is included in link [1]. 
