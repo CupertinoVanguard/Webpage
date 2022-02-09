@@ -1,8 +1,13 @@
 ## Labs For ECE 4960
 
-### Lab 1n 
+### Name: Nikhil Satheesh Pillai
+### Year: Sophomore
+### Major: ECE
 
-[lab2](https://cupertinovanguard.github.io/Webpage/Lab2)
+**Links For All Completed Labs**
+1. [lab1](https://cupertinovanguard.github.io/Webpage/Lab1)
+2. [lab2](https://cupertinovanguard.github.io/Webpage/Lab2)
+
 **Write Up:** 
 
 This lab involved setting up the artemis and experimenting with the Arduino IDE. The first example experimented with in this lab involved using `digitalWrite()` to blink the LED onboard by driving it high for half a second then driving it low for yet another half a second. The demonstration of this is included in link [1]. 
