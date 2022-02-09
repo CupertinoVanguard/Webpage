@@ -1,3 +1,5 @@
+##LAB 1
+
 ### LAB 1
 
 **Write Up:** 
