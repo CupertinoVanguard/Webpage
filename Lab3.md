@@ -46,5 +46,3 @@ The amendments to the existing IMU:
 <img width="809" alt="image" src="https://user-images.githubusercontent.com/23284665/154853280-ea326277-ca23-4503-9fa0-73387955068b.png">
 
 <img width="544" alt="image" src="https://user-images.githubusercontent.com/23284665/154853294-0da2eae7-4094-4979-a6fb-8c5f3d4fe3c2.png">
-
-<img width="421" alt="Screen Shot 2022-02-19 at 2 59 11 PM" src="https://user-images.githubusercontent.com/23284665/154847827-76271712-7fe7-4521-b0e9-5cad11b8b4f4.png">
