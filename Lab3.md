@@ -3,6 +3,7 @@
 ### Lab 3
 
 **Write Up:** 
+
 Lab 3 considered of four stages: connection layout, hardware assembly and soldering, IMU and TOF configuration + preliminary testing, and IMU and TOF fine-tuning.
 
 The connection layout process involved designing a wiring scheme to connect the 2 TOF's and IMU to the artemis board. In order to provide the same voltage to each sensor, the connections were set in parallel, splitting the current from QWIC connector amongst the three devices. Using the data sheet, the QWIC connector pin order was determined and the SDA and SCL were planned to be chained amongst all three sensors, resulting in all three sensors sharing a single SDA and SCL line. To manage the 2 TOF's (since they have the same address), the XSHUT pin of one of the TOF's was schemed to be wired the digital pin number 4 on the artemis.
