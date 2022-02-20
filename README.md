@@ -5,7 +5,7 @@
 ### Major: ECE
 
 **Links For All Completed Labs**
-1. [lab1](https://cupertinovanguard.github.io/Webpage/Lab1)
-2. [lab2](https://cupertinovanguard.github.io/Webpage/Lab2)
-3. [lab3](https://cupertinovanguard.github.io/Webpage/Lab3)
+1. [Lab1](https://cupertinovanguard.github.io/Webpage/Lab1)
+2. [Lab2](https://cupertinovanguard.github.io/Webpage/Lab2)
+3. [Lab3](https://cupertinovanguard.github.io/Webpage/Lab3)
 
