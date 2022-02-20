@@ -24,5 +24,13 @@ Then initial results are included in the pictures below:
 <img width="391" alt="Screen Shot 2022-02-19 at 2 17 08 PM" src="https://user-images.githubusercontent.com/23284665/154846980-87153f53-5d3c-4841-abbc-5ae11b1e4f8e.png">
 
 
+Since the Pitch has extremely minimal noise, the cutoff frequency considered was approximately 62 Hz. Using this cutoff frequency, the alpha determined was 0.76. Since the noise is extremely high, the cutoff frequency considered was aapproximately 35 Hz to cutoff a second wave of spikes starting after 35 Hz. The determined alpha was 0.637.
 
 
+For the gyroscope, the values were recorded much more easily since calculations were minimal. The dt utilized was 8ms since that waas the sampling period. The initial data included a signficantly amount of drift. Unfortunately, this result could not be recorded since the Serial plotted does not work on the MAC. To avoid this drift and attain stability with minimal noise, a complementary filter with both the gyroscope reading and the accelerometer reading. Various alphas were tested, and the alphaa that minimized drift and noise was determined to be 0.75 for pitch and 0.7 for roll. The resulting FFT graphs from a repeated tap experiment are included below:
+
+<img width="304" alt="image" src="https://user-images.githubusercontent.com/23284665/154847813-b7c0de26-65ae-42b1-bca3-191f152c09e2.png">
+
+<img width="421" alt="Screen Shot 2022-02-19 at 2 59 11 PM" src="https://user-images.githubusercontent.com/23284665/154847827-76271712-7fe7-4521-b0e9-5cad11b8b4f4.png">
+
+The drift was alos noticed to be signficantly lower though still present. 
