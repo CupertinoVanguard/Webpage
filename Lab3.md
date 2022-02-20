@@ -16,3 +16,5 @@ For the actual execution of th etakss, firstly, the various distance modes were 
 Secondly, the IMU task involved several steps. In order to determine the cutoff frequency and thus the  alpha for complimentaary filters, taapping along the pitch and roll axes were used. The base pitch was calculated using the artctan2 of (accX/accZ), and the base roll was calculated using atan2 of a_y/a_z. By performing FFT data analysis on the base pitch and roll resulted in signficant noise for the roll and minimal noise for the pitch. The sampling frequency as noticed from time tracking was 8ms and thus with the maximal possible bandwidth being f_s/2 = 1/0.008/2 = 62.5 Hz. The taps were approximately timed for every seconds alternating in each direction. The pitch and roll taps and tests were done seperately.
 
 Then initial results are included in the pictures below: 
+<img width="401" alt="Screen Shot 2022-02-19 at 2 06 00 PM" src="https://user-images.githubusercontent.com/23284665/154846907-73d18a36-6ff6-4045-bde2-0555e5f72ba7.png">
+
