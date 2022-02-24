@@ -47,3 +47,15 @@ The amendments to the existing IMU:
 <img width="809" alt="image" src="https://user-images.githubusercontent.com/23284665/154853280-ea326277-ca23-4503-9fa0-73387955068b.png">
 
 <img width="544" alt="image" src="https://user-images.githubusercontent.com/23284665/154853294-0da2eae7-4094-4979-a6fb-8c5f3d4fe3c2.png">
+
+Finally, the following two loom links involve the final results from values of the accelerometer and TOF.
+
+[TOF - EXECUTION](https://www.loom.com/share/51ba6e23460147e693111fd4250760b8)
+
+The TOF video shows four stages in this order: both sensors moving away from the surface, one sensor moving towards the surface, the other sensor moving towards the surface while the other is held constant, and both move towards the surface. 
+
+[IMU - EXECUTION](https://www.loom.com/share/268ea2fc876c4e279229e8b5e05f4bd9)
+
+The IMU video simply shows the change in pitch and roll.
+
+
