@@ -22,3 +22,7 @@ Wall coordinate - 0 cm
 Deceleration start - 120 cm from wall
 Minimum distance achieved from wall - 14.5 cm 
 
+The reasoning behing choosing this particular experiment was that it reveals a signficant piece of information: braking distance. Due to the lack of TOF's on the robot, this experiment allows determining the actual manual measurements for the break distance. With the data from above. The breaking distance is 120 cm - 14.5 cm = 105.5 cm. This manual measurement, though not ideal, is a good enough replacement for the TOF measurements. Additionally, potentially the 300cm - 120cm distance traveled in near full speed and time stamps from the video to attain a speed. The video of this experiment is included in the following link: 
+
+Again, the effectiveness and the experimental setup are relatively limited by the situation described prior. 
+
