@@ -11,9 +11,6 @@
 4. [Lab4](https://cupertinovanguard.github.io/Webpage/Lab4)
 5. [Lab5](https://cupertinovanguard.github.io/Webpage/Lab5)
 
-Test
-Hello
-Hello
 
 
  
