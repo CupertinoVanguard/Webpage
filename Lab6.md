@@ -52,3 +52,4 @@ The prelab code was utilized as the framework for the bluetooth communication. T
 **Surfce Discussion**
 The surfaces that the robot was tested on was similar back in my dorm and phillips. The constants were determined based on how to compensate for the slipperiness.
 
+*h
