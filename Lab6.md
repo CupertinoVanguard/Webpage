@@ -28,7 +28,6 @@ The second part of the lab dealt with tuning the PID values and the bluetooth fr
 **PID TUNING**
 The P variable was the first value tuned. To minimize the oscillation. a value of 0.3 was zoned in on. By utilizing P, a small, yet predicted oscillation was noticed around the set point. However, due to the lack of deadband and no noticeable difficulty for the robot to move baased on just P, an additional boost that an Integrator value may provide was ruled to be unnecessary. As such, I was set to 0. To limit the oscillation and the overshoot noticed, a derivative term was also incorporaated. This would allow the robot to slow down more dynamically and limit the amount of constant back and forth. At best a single oscialltion would be potentially noticed. A D value of 70 was experimentally determined. A higher value slowed down thr bobt too mcuh limiting its ability to move forward properly. With a D value of 70 (in reality 0.07 since 70 is in terms of ms), the robot has a small oscialltion but stops the appropriate distance.The video of the robot working is including the youtube link attached below: 
 
-<img width="457" alt="image" src="https://user-images.githubusercontent.com/23284665/160048505-ec01873f-a552-4c18-b838-ef0ff2a923b0.png">
 
 
 **BLUETOOTH**
@@ -37,4 +36,9 @@ The values were send back as a string and read in a similar fashion to lab 2 wit
 <img width="507" alt="image" src="https://user-images.githubusercontent.com/23284665/160048458-18da3a93-df21-461b-9468-f3a07a0300ac.png">
 <img width="457" alt="image" src="https://user-images.githubusercontent.com/23284665/160048520-f6d4205a-ce4b-4fee-b952-45a1f8f8157d.png">
 
+_Signal Processing Code:_
+<img width="917" alt="image" src="https://user-images.githubusercontent.com/23284665/160048822-a9d12813-f972-424b-b3ae-19d38599f231.png">
+
+**PRELAB Discussion**
+The prelab code was utilized as the framework for the bluetooth communication. The prelab code involved working to store a 1000 values in an array (similar to the arrays in the main lab) and sneding these values one by one based on a ping. For this the float characteristic string was used. Eventually, the 1000 values that were read were replaced with TOF values that were read by my hand moving back and forth in front of the sensor. Rather than using a timer to accomodate the data, a fixed size list was utilized. 
 
