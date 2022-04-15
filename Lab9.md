@@ -44,6 +44,7 @@ As can be seen the polar plots are relatively hard to comprehend and as such to 
 ![image](https://user-images.githubusercontent.com/23284665/163517086-6ae0714a-f03a-45c5-bbb4-461ffdaa4d39.png)
 ![image](https://user-images.githubusercontent.com/23284665/163517103-0100557a-7317-4e38-a6d1-0b96c1ddf57e.png)
 
+From the 4 cartesian coordinate perspectives, all four corners are significantly clearer in comparison to the polar graph. Additionally, the sides of the bigger box are also clear, though the sides are slanted due to the positional drift during the turn analyzed before. However, the major issue with these four cartesian plots is the lack of clarity pertaining to the smaller box. This occurs since not all four rotation spots are equidistant from the box. As such, the corrdinate that provides the best perspective of the side(s) of the smaller box was the point (-3,-2) since it was relatively closer to the smaller obstacle. The uncertainty surround this paraticular obstacle is more exaggerated and apparents when the box's dimensions are superimposed upon the TOF based mapping. The process through which the plar coordiantes were converted to rectangular coordinates is included in the code snippet below: 
 
 
 ![image](https://user-images.githubusercontent.com/23284665/163517131-b2714b38-3531-416e-87df-4a4f06f70108.png)
