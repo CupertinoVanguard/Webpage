@@ -50,6 +50,12 @@ From the 4 cartesian coordinate perspectives, all four corners are significantly
 To incorporate the data recorded at each rotation point to provice a more cohesive picture of the map, several linear translatations had to be incorporated. The first aspect included converting feet to mm using the conversion factor of 304.8 mm/ft. For each point data point, the values were shifted appropriately to make the center of the whole world 0,0. For instance, as seen in the image below, if the data point was recorded at (5, 3), the point is appropriately shifted up in the x_axis by (5 * 304.8) and in the y_axis by (3 * 304.8). This allows placing these set of points in the upper right hand corner of the overall graph. Each of these translational components are appropriately included bleow to build the total array of x & y points. For reference x_1 & y_1 correspond to data from (5-,3), x_3 & y_3 correspond to data from (5,3), x_4 & y_4 correspond to data from (0, 3), and x_5 & y_5 correspond to data from (-3,-2). 
 ![image](https://user-images.githubusercontent.com/23284665/163517131-b2714b38-3531-416e-87df-4a4f06f70108.png)
 
+The final combined plot with color coding is included at the very end. 
+
+
+**GROUND TRUTH COMPARISON**
+
+The final aspect of the lab involved comparing the measured data with the groun truth. Utilizing this would help understand which objects were properly detected and the potential error of the TOF sensor. The ground truth was determined by measureing the key corners of the map. The three sets that were utilized were the x & y corners of the overoutlines, the box's outlines, and the smaller box's outline. 
 
 ![image](https://user-images.githubusercontent.com/23284665/163517146-e50c134c-14a3-4b04-b85d-c524858f8f66.png)
 
