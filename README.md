@@ -18,3 +18,4 @@ tesat
 teaetr
 teawsta[Lab6](https://cupertinovanguard.github.io/Webpage/Lab6)[Lab6](https://cupertinovanguard.github.io/Webpage/Lab6)[Lab6](https://cupertinovanguard.github.io/Webpage/Lab6)[Lab6](https://cupertinovanguard.github.io/Webpage/Lab6)
 dd
+d
