@@ -1,6 +1,6 @@
-## LAB 6
+## LAB 9
 
-### Lab 6
+### Lab 9
 
 **Write Up:** 
 
@@ -11,7 +11,7 @@ This lab involves creating a mapping of the obstacle layout based off of measure
 This part of the lab took a while to execute since figuring out constant rotation with the prior PID logic, especially since the gyroscope readings seemed to drift. From the Arduino perspective, the PID code from lab 6 and gyro readings from lab 3 were fused into a new method called pid_map(). In order to utilize values from the python perspective, the distance, the time, and the rotation speed was stored in an array to be sent back through the SEND_DATA command (documented under Lab 6). To record more data for better accuracy, the interval between consecutive data collections was set to 250 ms. Another major edit made from Lab 6 PID was the PWM set Speed. As seen below, rather than including a potential reversal of PWM direction, only single direction PWM is maintinaed to avoid constant togggling bakc and forth during the turn to limit noisy and shifting data. The setpoint angle is approximately 35, though it never actually turns out to reach that particualr rotation speed. 
 
 The final product of the turn is included below:
-
+[Turning Video](https://youtube.com/shorts/BvqwGZ0vfvg?feature=share)
 
 Notes about the turn: As can be seen from the video, there is a slight displacement that occurs during the turn. This seemed unavoidable, despite adding tape to lower the static friction. However, the translation is relatively minimal in real-time, leading to minimal impact on the final data as can be seen in the final mapping images.
 
@@ -55,12 +55,20 @@ The final combined plot with color coding is included at the very end.
 
 **GROUND TRUTH COMPARISON**
 
-The final aspect of the lab involved comparing the measured data with the groun truth. Utilizing this would help understand which objects were properly detected and the potential error of the TOF sensor. The ground truth was determined by measureing the key corners of the map. The three sets that were utilized were the x & y corners of the overoutlines, the box's outlines, and the smaller box's outline. 
-
+The final aspect of the lab involved comparing the measured data with the groun truth. Utilizing this would help understand which objects were properly detected and the potential error of the TOF sensor. The ground truth was determined by measureing the key corners of the map. The three sets that were utilized were the x & y corners of the overoutlines, the box's outlines, and the smaller box's outline. The points list for the obstacles are included in the snippet below:
 ![image](https://user-images.githubusercontent.com/23284665/163517146-e50c134c-14a3-4b04-b85d-c524858f8f66.png)
 
+The superimposed ground truth and the combined measurements plot is included below:
 
 ![image](https://user-images.githubusercontent.com/23284665/163517199-07a40c21-d144-468b-b6ab-5ff536261c99.png)
+
+There are two plots included here. The second is the color-coded plot to help signify the various properties of the map that each rotation point helps pick-up. The first plot helps identify the discrepancy between the measured values and the ground truth. THe corners are extremely close to that of what was measured, excpet for minor offsets. The bigger box, as expected, has seemingly slanted sides due to the aforementioned positional drift during the in-place turn. The most glaring discrepancy is the lack of clarity for the smaller box. The ground truth is in a different location comparied to the measruement, and the measurements do not provide a proper definition. 
+
+**ACKNOWLEDGEMENTS**
+Swapnil Barot (Lab partner for this particular lab)
+
+Important notes:
+An instance were the robot turns twice and measures data was taken. However, the data seemed too noisy and so this method was not used to measure data. 
 
 
 
