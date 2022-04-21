@@ -1,6 +1,6 @@
 # LAB 7
 
-### Lab 7 - KF
+### Lab 7 - KF - Online + Offline
 
 **Write Up:** 
 
