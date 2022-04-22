@@ -26,9 +26,11 @@ For our open loop stunt, we decided to add some flair to our presentation and th
 
 
 **Bloopers**
+
 [Blooper](https://youtube.com/shorts/-GQfIVtlC3A?feature=share)
 Hey, at least it made it over the ramp and flipped right... :)
 
 **Acknowledgements**
+ 
 I worked on this lab with Swapnil Barot and Priyam Patel
 
