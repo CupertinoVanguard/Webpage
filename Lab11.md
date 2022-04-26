@@ -51,4 +51,6 @@ Looking at the individual iterations, a clear patter can be noticed. The predict
 
 **Run Time**
 
-The run time without any optimization is approximately 42 minutes with each iteration taking approximately 2 to 3 minutes. In order to reduce the runtime, an optimization was added in the prediction function, where if the start point probability is less than 0.001, the point is ignored to save some complexity. The resulting run time then becomes. 
+The run time without any optimization is approximately 42 minutes with each iteration taking approximately 2 to 3 minutes. In order to reduce the runtime, an optimization was added in the prediction function, where if the start point probability is less than 0.001, the point is ignored to save some complexity. The resulting run time then becomes.
+
+d
