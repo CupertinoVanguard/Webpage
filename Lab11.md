@@ -1,37 +1,44 @@
-## LAB 10
+## LAB 11
 
-### Lab 10
+### Lab 11
 
 **Write Up:** 
 
 This lab involved utilizing Vivek’s simulator (Thanks Vivek!) and getting more experience with the various commands within the environment. 
 
-**TASK 1**
+**Various Methods**
 
-The first involved moving the robot in a small square. This involved creating forward, turn, and stop methods. For the turn method, the .set_vel method had to be used with the first parameter as 0 for no translational velocity and 1.5 for angular velocity. 1.5 rad/s is assumed to be a close enough approximation to pi/2 rad/s (90 degrees/second). The forward method used the set_vel method with the first parameter set to 0.5 m/s for translational velocity and 0 rad/s for the angular velocity. Finally, the stop method set both translational and angular velocities to 0. 
+**Compute Control method**: The compute control method works by find the rotation angles necessary to achieve the proper orientation and the translation needed to move to the second position. There are two primary angles that were computed: delta_rot_1 & delta_rot_2. Delta_rot_1 is computed to be the angle required to move into the proper angle to achieve the translation. Delta_rot_2 is computed to be the angle to move into the desired orientation once the translation has been achieved. The translation is calculated from the x & y displacements based on the Pythagorean theorem. The code is included below:
+![image](https://user-images.githubusercontent.com/23284665/165348769-8c22c2be-8be1-45b3-9de1-fcb0e2adcb7d.png)
 
-![image](https://user-images.githubusercontent.com/23284665/164478055-a826a48e-1688-4f20-9930-e16bad54c651.png)
-
-To execute the turns the following code was utilized:
-
-![image](https://user-images.githubusercontent.com/23284665/164478591-9e7244cd-dca1-4ce0-8a45-3e35bc13384c.png)
-
-This code is designed to only be run once and executes each of the defined actions for approximately only one-second using await asyncio.sleep(1). This was chosen over time.sleep(1) since await asyncio.sleep(1) is non blocking and only works within this particular thread’s scope. After each action, the plot_pose method is used as well which plots both the odometry and the ground truth in red and green respectively. The video of that is in the following [link](https://youtu.be/MKw_8O-XNko). The second test to prove that the same shape occurs during each iteration is in this [link](https://youtu.be/Vy05m8nSdhE). 
-
-The pose_plot is included below:
-
-![Screen Shot 2022-04-21 at 10 08 28 AM](https://user-images.githubusercontent.com/23284665/164479926-e01295dd-7620-4a0d-8cbe-f8a8ff46ed73.png)
-
-As can be seen, the ground truth is vastly different than that of the odometry data. This likely occurs to the errors in measurements, and the turning potentially occurring when and how the measurements occur. Additionally, it seems as though odometry seems to struggle in representing the closed loop movement and thus does not itself produce the expected closed-loop shape. 
+**Odometry Motion Model**: The idea behind this method is to find the probability that a particular motion u occurred given that we have access to what motion actually occurred based on the poses provided and the sensor noise. In order to calculate this conditional probability, the individual conditional probabilities of the various compute control results had to be multiplied together. This utilizes the gaussian function from the BaseLocalization class with the means of the angle inputs being 0 to avoid normalization issues and the comparison value being the normalized error with the normalize_angle function. The angle must be normalized since without such normalization true marginal differences can be amplified to be faulty larger differences. The code is included below:![image](https://user-images.githubusercontent.com/23284665/165348966-698658a2-e1fb-4121-9009-c0e4dc277439.png)
 
 
-**TASK 2**
+**The prediction step**: The main concept behind this prediction step is working with the idea that all input start points and end start points are probabilistic. As such, the entire grid’s predicted probabilities must be updated. To achieve this, every possible start point and every possible endpoint must be looped through (3 + 3). This results in 6 for loops. The first step involved getting the actual movement based on the odometry. Considering each start,end pose combinations, the odometry motion model is called with the first two inputs being the current odometry and previous pose and the third input being the motion model required to move from start, end combination being considered. This result is then multiplied by the belief associated with the current start point grid cell. The result is then assigned to the bel_bar (the prediction probability) to the end point grid cell.  
 
-This involved doing closed-loop movements. The final code for the closed-loop movement is the following: 
+The logic behind this is to see if the motion associated with the (start,end) is likely to have occurred knowing the true (start,end) poses. In the final step, the bel_bar is normalized using the np.sum method and before going through the 6 for loops, the bel_bar is zeroed to avoid accumulation over previous estimations. The resulting code is included below:
+![image](https://user-images.githubusercontent.com/23284665/165349051-f47a2c7e-48ac-4582-a4e2-a18c9b6d3dee.png)
 
-![image](https://user-images.githubusercontent.com/23284665/164480258-1d7e203d-4104-40ed-8557-21809ebb3ca3.png)
+
+**Sensor Model**: The sensor model works by doing a conditional probability between the actual measurements based on the expected measurement and the measurement noise. This is done for each of the 18 measurements, and all are multiplied together to get the net probability. The code is included below:
+![image](https://user-images.githubusercontent.com/23284665/165349257-4d116d86-ced6-453a-9623-dd679f55f29e.png)
 
 
-The code runs as long as the environment is active and constantly checks if the sensor value is less than a particular threshold, then the robot turns by approximately pi/2 radians since the loop runs approximately every second. This roughly translates to 90 degrees. This allows the robot completely turn away from an object and heads in the opposite direction. The robot approaches the wall at approximately 0.35 m/s which seemed slow enough for the robot to move yet not hit the wall. If the speed was increased, the robot can often overshoot and get too close to the wall affecting the turning once an obstacle is detected. After each loop, the pose is plotted as well and can be seen in the video. Since a large enough padding was provided, there were no crashes noticed during multiple trials. Additionally, the closest sensor reading the simulations seems to return before the robot actually turns away is 0.36. 
+**Update Step**: This represents the final step. It goes through each of the grid cells in the 3 dimensional space and computes the associated belief based on the stored bel_bar and the results of the measurements. Similar to the bel_bar prediction step, the beliefs are also normalized. The code is included below: ![image](https://user-images.githubusercontent.com/23284665/165349304-63993da0-cf36-421a-9399-bbd23e82bca5.png)
 
-[Result of closed loop](https://youtu.be/yb5D1bhuALE)
+
+
+**Results**
+
+The results of the movement is included in the following [link]().
+
+The individual iterations and the results of the prediction and update steps are included below:
+![image](https://user-images.githubusercontent.com/23284665/165350319-f960eccf-9a41-4838-827d-97a8cd0a966d.png)
+![image](https://user-images.githubusercontent.com/23284665/165350379-62a47d60-6699-4015-8944-308f90879893.png)
+![image](https://user-images.githubusercontent.com/23284665/165350426-242520d4-6edc-4e94-ac26-bd644274bb80.png)
+![image](https://user-images.githubusercontent.com/23284665/165350478-a31121c1-6237-4705-9357-159792307adf.png)
+![image](https://user-images.githubusercontent.com/23284665/165350540-db618b09-5339-4c16-99d7-0861a1873345.png)
+![image](https://user-images.githubusercontent.com/23284665/165350594-b6bb54d4-113f-4037-8d7f-e921b0c39dd4.png)
+![image](https://user-images.githubusercontent.com/23284665/165350647-c19e3211-5a5c-4714-b56d-dcca962e6c13.png)
+![image](https://user-images.githubusercontent.com/23284665/165350705-c67d87fa-b0eb-4a62-ad54-a57ae6dc2253.png)
+
