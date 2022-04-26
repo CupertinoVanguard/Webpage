@@ -42,3 +42,13 @@ The individual iterations and the results of the prediction and update steps are
 ![image](https://user-images.githubusercontent.com/23284665/165350647-c19e3211-5a5c-4714-b56d-dcca962e6c13.png)
 ![image](https://user-images.githubusercontent.com/23284665/165350705-c67d87fa-b0eb-4a62-ad54-a57ae6dc2253.png)
 
+The final run of the result is included here: ![image](https://user-images.githubusercontent.com/23284665/165351709-8d531145-3c92-45b6-b8eb-de5afd3dbab5.png)
+
+
+As can be seen in the video, the blue line follows extremely closely to the ground truth trajectory which is repreasented in green. The most insteresting aspect of the overall plot seems to be the discrepancies of the belief and the ground truth during sharp turns in the trajectory. During the ground truth angular portions,the belief seems to follow straight lines, leading to less smooth turns from the Bayes Filter. As usual the odometry is extremely different than the ground truth. 
+
+Looking at the individual iterations, a clear patter can be noticed. The predicted location in the 3 dimensional grid consistently improves over several iterations, but does become more different during the aforementioned sharp turn points. Another major observation is that the probability of the predicted locations never eclipses 20%, but once incorporating the observations, the probability and trust in the position jumpts to near 98%. This indicates significant trust in the observation. However, when running this program in real time, this trust will not perfectly map over since there is a lot more noise which will not be perfectly uniform. 
+
+**Run Time**
+
+The run time without any optimization is approximately 42 minutes with each iteration taking approximately 2 to 3 minutes. In order to reduce the runtime, an optimization was added in the prediction function, where if the start point probability is less than 0.001, the point is ignored to save some complexity. The resulting run time then becomes. 
