@@ -55,19 +55,23 @@ The localization script was run in four different locations. At each of these lo
 ### Individual Results:
 
 (-3, -2)
+
 <img width="764" alt="-3,-2" src="https://user-images.githubusercontent.com/23284665/167281105-bf2c20a7-f78b-4d4f-bbb0-add940e37342.png">
 <img width="495" alt="image" src="https://user-images.githubusercontent.com/23284665/167536955-e6a5f679-5eae-4b5c-abae-1598257b3896.png">
 
 
 (0,3)
+
 <img width="890" alt="0,3" src="https://user-images.githubusercontent.com/23284665/167281108-74edb693-300d-464c-a5cd-63e4e289999f.png">
 <img width="502" alt="image" src="https://user-images.githubusercontent.com/23284665/167536891-18599ada-2017-40ae-a93d-60452e69eca8.png">
 
 (5, -3)
+
 <img width="830" alt="5,-3" src="https://user-images.githubusercontent.com/23284665/167281120-87178827-e8f7-470f-8581-315a600186c4.png">
 <img width="494" alt="image" src="https://user-images.githubusercontent.com/23284665/167537055-40b4cc08-7be7-4ced-8bc7-2db43eac5bbf.png">
 
 (5,3)
+
 <img width="763" alt="5,3" src="https://user-images.githubusercontent.com/23284665/167281126-02079ab2-bb35-4bd8-99ba-f05d4106d916.png">
 <img width="492" alt="image" src="https://user-images.githubusercontent.com/23284665/167536999-89df35fe-2160-4ebd-b734-77fc8206efcf.png">
 
