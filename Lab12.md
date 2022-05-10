@@ -3,6 +3,14 @@
 
 Lab 12 involved utilizing a version of the mapping code developed in lab 9 and fusing it with logic developed from lab 11. 
 
+## Task 1
+
+The first task in this lab involved experimenting with the provided and ultra-optimized version of Lab 11 provided. The plot shows the belief in blue and the ground truth in green and the final destination of the robot based on probability as well. Interestingly, this code ran much fater than my version of Lab 11 due to the optimizations and usage of matrix multiplications. 
+
+<img width="498" alt="image" src="https://user-images.githubusercontent.com/23284665/167536710-b03de909-6297-4188-8d14-afcf7cb41889.png">
+
+## Task 2
+
 ## Turning & Data Collection:
 
 The turning in lab 9 involved turning at the desired rotation speed. As such, no particular angular control was provided and all stops came from the jupyter notebook side rather than the Arduino side. Now the code has been remodeled to only take readings every 20 seconds and is promptly stopped when the measured angle is between 350 and 370 while still moving at a theoretical speed of 35 degrees per second. 
@@ -42,14 +50,27 @@ This part of the process involved taking the code from the first process and app
 
 ## Results:
 
-The localization script was run in four different locations. At each of these locations, a near 360 degree, and return the processed distance values (in meters) to be assigned to the obs_range_data variable of the base localization class. The data is then used in the update step to update the belief throughout the grid. In the prints of the results seen in the images below, the location (in meters). An important point of notice is the consistently high probabilities even for the “wrong” localization results. This implies that the measurements taken at those spots seemed to closely resemble that of another spot’s expected measurements and thus localizes at that “wrong” position with high probability. More interestingly, the wrong localization results seem to be off by a foot in both the x and y directions. This indicates errors during the imperfect inplace rotation where the robot may have moved to different tiles in both the x and y direction, thus picking up measurements that match with the foot translations in both directions. 
+The localization script was run in four different locations. At each of these locations, a near 360 degree, and return the processed distance values (in meters) to be assigned to the obs_range_data variable of the base localization class. The data is then used in the update step to update the belief throughout the grid. In the prints of the results seen in the images below, the location (in meters). An important point of notice is the consistently high probabilities even for the “wrong” localization results. This implies that the measurements taken at those spots seemed to closely resemble that of another spot’s expected measurements and thus localizes at that “wrong” position with high probability. More interestingly, the wrong localization results seem to be off by a foot in both the x and y directions. This indicates errors during the imperfect inplace rotation where the robot may have moved to different tiles in both the x and y direction, thus picking up measurements that match with the foot translations in both directions. Additionally, the odomotery plots given for each point indicate the blief and the ground truth points. 
 
 ### Individual Results:
 
+(-3, -2)
 <img width="764" alt="-3,-2" src="https://user-images.githubusercontent.com/23284665/167281105-bf2c20a7-f78b-4d4f-bbb0-add940e37342.png">
+<img width="495" alt="image" src="https://user-images.githubusercontent.com/23284665/167536955-e6a5f679-5eae-4b5c-abae-1598257b3896.png">
+
+
+(0,3)
 <img width="890" alt="0,3" src="https://user-images.githubusercontent.com/23284665/167281108-74edb693-300d-464c-a5cd-63e4e289999f.png">
+<img width="502" alt="image" src="https://user-images.githubusercontent.com/23284665/167536891-18599ada-2017-40ae-a93d-60452e69eca8.png">
+
+(5, -3)
 <img width="830" alt="5,-3" src="https://user-images.githubusercontent.com/23284665/167281120-87178827-e8f7-470f-8581-315a600186c4.png">
+<img width="494" alt="image" src="https://user-images.githubusercontent.com/23284665/167537055-40b4cc08-7be7-4ced-8bc7-2db43eac5bbf.png">
+
+(5,3)
 <img width="763" alt="5,3" src="https://user-images.githubusercontent.com/23284665/167281126-02079ab2-bb35-4bd8-99ba-f05d4106d916.png">
+<img width="492" alt="image" src="https://user-images.githubusercontent.com/23284665/167536999-89df35fe-2160-4ebd-b734-77fc8206efcf.png">
+
 
 ### Tabled Results:
 <img width="418" alt="image" src="https://user-images.githubusercontent.com/23284665/167281151-b4662891-9ea6-4db7-a44e-dd6de4b0e73e.png">
