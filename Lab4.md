@@ -26,8 +26,17 @@ The reasoning behind choosing this particular experiment was that it reveals a s
 
 [EXPERIMENT - LINK](https://youtu.be/z19z21m2-6U)
 
-The experiment above is run on carpet within a fixed length of the room. The robot starts from one side of the room in each trial and drives to the other rend of the room. The goal was always to make the robot drive straight; however, it seemed nearly impossible to achieve due to imperfect motor coupling present in the robot. Additional trials are included below(though not all these are completely perfect due to surface unneveness discussed later):
+The experiment above is run on carpet within a fixed length of the room. The robot starts from one side of the room in each trial and drives to the other rend of the room. The goal was always to make the robot drive straight; however, it seemed nearly impossible to achieve due to imperfect motor coupling present in the robot. An additional trial is included below(though not all these are completely perfect due to surface unneveness discussed later):
 
+[EXPERIMENT 2 - LINK](https://youtu.be/odt9LKFyRoc)
+
+In the above trial, the control was released a second earlier than Experiment B. This caused the robot to stop nearly 50cm from the wall, but it displayed a very similar breaking distance value of 90 cm
+
+Another trial where the robot control was released one second after in comparison to Experiment B is included below: 
+
+[EXPERIMENT 3 - LINK](https://youtu.be/3UiqbSONvFU)
+
+While the breaaking distance is hard to recognize in this video duw to the limitations of the experiment region. These additional trials are included to ephasize the effect of timing in this experiment. A second early, and the robot is nearly 40 additional cm from the wall. A second late and the robot iss sure to crash into the wall. However, what was noticed through all these experiments was that the breaking distance wasnearly constant. 
 
 
 ## Experimental Differences
