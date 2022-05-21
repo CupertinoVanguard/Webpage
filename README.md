@@ -18,9 +18,4 @@
 11. [Lab11 ](https://cupertinovanguard.github.io/Webpage/Lab11)
 12. [Lab12 ](https://cupertinovanguard.github.io/Webpage/Lab12)
 13. [Lab13 ](https://cupertinovanguard.github.io/Webpage/Lab13)
-test test test test 
-test test
- d
-dd
-d
-ddddd
+
