@@ -71,13 +71,28 @@ THe difference in this trials was the robot was never touched for this first par
 
 Aside from the bluetooht issue, however, the acutal execution was extremely smooth. The turns were perfect, the compute control logic of turn, straight, turn actually worked, and any issues that persisted in the angling of the robot were autocorrected due to robust PID. Point (5,-3) was not properly touched but the tile was entered and crossed. 
 
-### Run 2
+#### Run 2
 
 Run 2 involved just starting from 5,3 and allowing the robot complete the rest of the trajectory mostly hands free. The completion of this run was designed to prove that the issues discussed in the Run 1 section were not programmatic but weret truly bluetooth issues. The second run; however, did need one physical interference from my side though the error was caused by the imperfect placement of the robot when we begain Run 2. Had we not had to deal with the physical placement and had this been a proper extension of Run 1, no physical intereference would have been necessary. Run 2 was also perfect in its execution and even avoided crashing into another team's robot that was already present at the point -4,-3. The execution of Run 2 is included below:
 
-### Potential Result
+#### Potential Result
 
 Obviously, the entire run didn't go as planned due to the bluetooth issue. But the 2 separate runs did prove that our PID logic was robust, the offboard commands were properly being read, and the local path planning was a success. We could only hope that our robot would do the entire run without any issues, but alas, that unfortunately never happened. Nevertheless, after spending 10 straight days, over 45 hours on this task, and an enjoyable, yet tiring night grind from 2 pm to 3:30 am at the lab, we are also including aa video of how a near perfect run would have been had the two separate runs above been one after another
 
 ### Important Notes
+There were also obviously imperfections in the actual obstacle layout. At times the boxes were not perfectly in their designated regions and the the walls not properly aligned. The most important imperfection we noticed throughout the entire run was the dust accumulation that cause every turn after a certain point a bit unreliable. However, they were minor imperfections that were never a big hurdle compared to the bluetooth issues we faced. 
 
+## Localization
+
+The obvious question so far is probably why no localization? Localization would have made the robot more tolerant to minor error and allows better self correction right? The answers to the previous question was yes it does and I too wish we could have done it. However, two issues did arise that we noticed:
+
+### Issue 1: Localization errors:
+When we ran localization on 0,3 and 5,3, we noticed that there was a relatively large error. The estimation showed that at 5,3 the robot thought that it was 6,2. This is clearly problematic since if localization were to be implemented and if localization did give me a result of 6,2, it would never be properly detect when it it as true 5,3 and if it were to move, it will likely crash into the big box without any obstacle avoidance. Additing obstacle avoidance on top of Localization would result in too complex a script. The result of the faulty localization at that point is included below
+
+### Issue 2: Bluetooth yet again
+While localization is relatively poor for our robot, it's a much less signficant hurdle than our bluetooth issues. Each localization for us takes approximately 3o to 40 seconds to complete. When we tried to do a few localization continuously, it seemed that the bluetooth disconnected yet again. So, using this logic, localization would have likely caused the entire script to timeout and the robot may not have even got out of the first 2 or 3 points.
+
+Another question maybe why not do selective localization? In other words, why not only do localization in certain points. This was considered initially; however, we realized that selective localization is a fundamentally flawed concept. Localization introduces error, and to fix the error, yet another localization is necessary. As such, using this chain of thought, using localization at certain points introduces error only additional localizations can solve and thus, the entire trajectory must be localization to properly work. This ultimately creates a localization only or nothing situation
+
+## Conclusion
+There were many issues that this lab introduced, but the end result was all worth the effort. A special thanks to Professor Petersen to help walk me through some trajectory logic, Vivek for helping us debug our distance sensor issues, Jonathan for helping us try potential bluetooth issue soluttions (though they did not seem to work in our case), Jade for keeping us motivated despite the continous failed trials, and Aratrika for keeping the lab open for longer than intended on Saturday to finish our testing. 4960 was a great learning experience and this lab specifically was great! 
