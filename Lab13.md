@@ -69,7 +69,7 @@ Due to the bluetooh issue, we opted to find the 2 longest runs we could and anal
 
 #### Run 1
 
-Run one (the longest of the 2) involved starting at our start point and getting all the way until 5, 3 hands free. However, the trajectory from 5, 3 on to 0,3 constantly fails as the blue tooh connection times out at that one point and the robot proceeds to just crash into the wall. The unsuccessful trial that displays the issue is included below:
+Run one (the longest of the 2) involved starting at our start point and getting all the way until 5, 3 hands free. However, the trajectory from 5, 3 on to 0,3 constantly fails as the blue tooh connection times out at that one point and the robot proceeds to just crash into the wall. The unsuccessful trial that displays the issue is included [here](https://youtu.be/8NUiufPoF8c).
 
 This trail was conducted before the proper tuning of the PID turns and straight movement but it goes to emphasize the issue we were facing. The PID seemed fine until the trajectory from 5,3 to 0,3 at which pythong from the Python side, we could see that the bluetooth disconnected and the robot had run loose. Ultimately, our worst fear came to fruition. 
 
@@ -100,7 +100,9 @@ There were also obviously imperfections in the actual obstacle layout. At times 
 The obvious question so far is probably why no localization? Localization would have made the robot more tolerant to minor error and allows better self correction right? The answers to the previous question was yes it does and I too wish we could have done it. However, two issues did arise that we noticed:
 
 ### Issue 1: Localization errors:
-When we ran localization on 0,3 and 5,3, we noticed that there was a relatively large error. The estimation showed that at 5,3 the robot thought that it was 6,2. This is clearly problematic since if localization were to be implemented and if localization did give me a result of 6,2, it would never be properly detect when it it as true 5,3 and if it were to move, it will likely crash into the big box without any obstacle avoidance. Additing obstacle avoidance on top of Localization would result in too complex a script. The result of the faulty localization at that point is included below
+When we ran localization on 0,3 and 5,3, we noticed that there was a relatively large error. The estimation showed that at 5,3 the robot thought that it was 6,2. This is clearly problematic since if localization were to be implemented and if localization did give me a result of 6,2, it would never be properly detect when it it as true 5,3 and if it were to move, it will likely crash into the big box without any obstacle avoidance. Additing obstacle avoidance on top of Localization would result in too complex a script. The result of the faulty localization at that point is included below:
+
+<img width="782" alt="image" src="https://user-images.githubusercontent.com/23284665/169671286-1571d82f-57fa-4915-92d4-dce0ea26cf6f.png">
 
 ### Issue 2: Bluetooth yet again
 While localization is relatively poor for our robot, it's a much less signficant hurdle than our bluetooth issues. Each localization for us takes approximately 3o to 40 seconds to complete. When we tried to do a few localization continuously, it seemed that the bluetooth disconnected yet again. So, using this logic, localization would have likely caused the entire script to timeout and the robot may not have even got out of the first 2 or 3 points.
