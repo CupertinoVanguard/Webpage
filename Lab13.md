@@ -1,6 +1,6 @@
 # Lab 13 - ENDGAME!
 
-Lab 13 was an awesome, but hard last project. It involved following a trajectory and making sure all the points were hit more or less. Several challenges were faced along thew way, but overall it was a great experience putting all this work to make it work. 
+Lab 13 was an awesome, but difficult last project. It involved following a trajectory and making sure all the points were hit more or less. Several challenges were faced along thew way, but overall it was a great experience putting all this work to make it work. 
 
 ## Introduction
 
