@@ -5,6 +5,7 @@ Lab 13 was an awesome, but hard last project. It involved following a trajectory
 ## Introduction
 
 The goal of this lab is to hit the various wavepoints:
+
 <img width="109" alt="image" src="https://user-images.githubusercontent.com/23284665/169666428-20727dd0-a258-4103-97e2-5dcc2582b58f.png">
 
 Our approach is listed below:
@@ -31,10 +32,13 @@ A note of interest here was that some angles maybe negative during turns. To com
 
 Finally, from the python side, a method was created in which a loop runs through all the possible trajectories and executes the trajectory in the order of turn, wait, straight, wait, stop, wait, turn (if neeeded). As such the entire sequence if offboard and involves local path-planning. 
 
+<img width="1275" alt="image" src="https://user-images.githubusercontent.com/23284665/169670986-2349a567-77d1-4385-9818-694ca04c1fb0.png">
 
 ## Arduino Implementation
 
 The arduino implementation was relatively straight forward, or so we thought. The implementation of the turn was simple and only required a slight change from the lab 12 code. The only change was that rather than explicitly stopping at 360, now the method could stop at a custom angle provided. The turn was run exculisively on P with P = 4. The implementation of that code is included below:
+
+<img width="1416" alt="image" src="https://user-images.githubusercontent.com/23284665/169671008-43ded3e6-a1ea-4b03-bc7f-ccbf8da89a51.png">
 
 The moving straight, surprisingly, was what gave us most of our issues. The first issue we noticed was the sensor seemed to "cache" its readings. In a simple test carried out with the help of Vivek, we moved the robot from a wall, effectively chaning the distance of the robot from wall during every iteration. What we noticed was, the sensor seemed to cache the values of a previous iteration and supply that value as the reading of the current iteration. The solution that we utilized to temporarily avoid the issue was not ideal but effective enough. The solution was to add a checkDataIsReady() boolean check before executing the movement. If the data was not reading, the rest of the code would be blocked and not allowed to run.
 
@@ -42,6 +46,10 @@ To properly execuite PID, we needed an initial value. This value was recorded on
 <img width="492" alt="image" src="https://user-images.githubusercontent.com/23284665/169668173-5a662029-678d-468b-b157-307d72e339f7.png">
 
 The rest of the PID logic stayed the same from Lab 6 and 7 including the P & D constants, the speed control, and the error calculations.
+
+<img width="1414" alt="image" src="https://user-images.githubusercontent.com/23284665/169671030-e5724719-9529-48dc-9b21-ffcde2fdcb5a.png">
+
+<img width="626" alt="image" src="https://user-images.githubusercontent.com/23284665/169671044-ef60b265-c97b-4c99-b09e-0957e93810fc.png">
 
 ## Results
 
@@ -67,6 +75,8 @@ This trail was conducted before the proper tuning of the PID turns and straight 
 
 The succeful trial (aka no interference) is included below:
 
+[Actual Run 1](https://www.youtube.com/embed/GLX7j7TNE9s)
+
 THe difference in this trials was the robot was never touched for this first part of the trajectory, yet the robot disconnected at the exact same point. This first stitch was perfect all the way up until the (5,3,0,3) trajectory. The problem was truly out of our control as we had no proper solution to force a bluetooth connection. Checks for if the bluetooth was connected were added to the artemis code and they all confirmed that the bluetooth infact was disconnecting at thaat point due to timing out. 
 
 Aside from the bluetooht issue, however, the acutal execution was extremely smooth. The turns were perfect, the compute control logic of turn, straight, turn actually worked, and any issues that persisted in the angling of the robot were autocorrected due to robust PID. Point (5,-3) was not properly touched but the tile was entered and crossed. 
@@ -75,12 +85,15 @@ Aside from the bluetooht issue, however, the acutal execution was extremely smoo
 
 Run 2 involved just starting from 5,3 and allowing the robot complete the rest of the trajectory mostly hands free. The completion of this run was designed to prove that the issues discussed in the Run 1 section were not programmatic but weret truly bluetooth issues. The second run; however, did need one physical interference from my side though the error was caused by the imperfect placement of the robot when we begain Run 2. Had we not had to deal with the physical placement and had this been a proper extension of Run 1, no physical intereference would have been necessary. Run 2 was also perfect in its execution and even avoided crashing into another team's robot that was already present at the point -4,-3. The execution of Run 2 is included below:
 
+[Successful Run 2](https://www.youtube.com/embed/jDliG3fiCXA)
+
 #### Potential Result
 
-Obviously, the entire run didn't go as planned due to the bluetooth issue. But the 2 separate runs did prove that our PID logic was robust, the offboard commands were properly being read, and the local path planning was a success. We could only hope that our robot would do the entire run without any issues, but alas, that unfortunately never happened. Nevertheless, after spending 10 straight days, over 45 hours on this task, and an enjoyable, yet tiring night grind from 2 pm to 3:30 am at the lab, we are also including aa video of how a near perfect run would have been had the two separate runs above been one after another
+Obviously, the entire run didn't go as planned due to the bluetooth issue. But the 2 separate runs did prove that our PID logic was robust, the offboard commands were properly being read, and the local path planning was a success. We could only hope that our robot would do the entire run without any issues, but alas, that unfortunately never happened. Nevertheless, after spending 10 straight days, over 45 hours on this task, and an enjoyable, yet tiring night grind from 2 pm to 3:30 am at the lab, we are also including a video of how a near perfect run would have been had the two separate runs above been one after another. [Perfect Run](https://www.youtube.com/embed/vB2Yq-hQNg4)
+
 
 ### Important Notes
-There were also obviously imperfections in the actual obstacle layout. At times the boxes were not perfectly in their designated regions and the the walls not properly aligned. The most important imperfection we noticed throughout the entire run was the dust accumulation that cause every turn after a certain point a bit unreliable. However, they were minor imperfections that were never a big hurdle compared to the bluetooth issues we faced. 
+There were also obviously imperfections in the actual obstacle layout. At times the boxes were not perfectly in their designated regions and the the walls not properly aligned. The most important imperfection we noticed throughout the entire run was the dust accumulation that cause every turn after a certain point a bit unreliable. However, they were minor imperfections that were never a big hurdle compared to the bluetooth issues we faced. These minor imperfections, though, did play a role in the times where we had to physically interfere with the trajectory.
 
 ## Localization
 
