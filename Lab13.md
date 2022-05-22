@@ -111,3 +111,5 @@ Another question maybe why not do selective localization? In other words, why no
 
 ## Conclusion
 There were many issues that this lab introduced, but the end result was all worth the effort. A special thanks to Professor Petersen to help walk me through some trajectory logic, Vivek for helping us debug our distance sensor issues, Jonathan for helping us try potential bluetooth issue soluttions (though they did not seem to work in our case), Jade for keeping us motivated despite the continous failed trials, and Aratrika for keeping the lab open for longer than intended on Saturday to finish our testing. 4960 was a great learning experience and this lab specifically was great! 
+
+## Collaborator: Swapnil Barot
